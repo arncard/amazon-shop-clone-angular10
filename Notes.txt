@@ -1,0 +1,3 @@
+React context API --- Redux in Angular - NgRx
+Firebase (authentication, hosting)
+React Router: multiple web pages in a SPA --- Angular: https://angular.io/guide/router-tutorial
