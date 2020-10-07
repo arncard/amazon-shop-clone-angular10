@@ -1,0 +1,17 @@
+<div class="product">
+  <div class="product__info">
+    <p>{{ title }}</p>
+    <p class="product__price">
+      <small>$</small>
+      <strong>{{ price }}</strong>
+    </p>
+    <div class="product__rating">
+      <div *ngFor="let prodRating of starsList"> 
+        ⭐   
+        <!-- <fa-icon [icon]="starIcon"></fa-icon>     -->
+      </div>
+    </div>
+    <img [src]="imageUrl" alt="">
+    <button>Add to basket</button>
+  </div>  
+</div>

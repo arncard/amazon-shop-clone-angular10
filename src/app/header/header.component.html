@@ -1,29 +1,34 @@
 <nav class="header">
-    <!-- logo on the left -->
-    <a routerLink="/home"><img class="header__logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"></a>    
-    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button> -->
-    <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
-        <!-- <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>          
-        </ul> -->
-        <!-- <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" aria-label="Search">
-          <button type="submit" class="btn btn-primary header__searchIcon" title="Search..."><fa-icon [icon]="searchIcon"></fa-icon></button>
-        </form> -->
-        <div class="header__search">
-          <input class="header__searchInput" type="text">
-          <button type="submit" class="btn header__searchIcon" title="Search..."><fa-icon [icon]="searchIcon"></fa-icon></button>
-        </div>
-    <!-- </div> -->
+    <a routerLink="/home"><img class="header__logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"></a>        
+    <div class="header__search">
+      <input class="header__searchInput" type="text">
+      <button type="submit" class="btn header__searchIcon" title="Search..."><fa-icon [icon]="searchIcon"></fa-icon></button>
+    </div>
+    <div class="header__nav">
+      <a routerLink="/login" class="header__link">
+        <div class="header__option">
+          <span class="header__optionLineOne">Hello</span>
+          <span class="header__optionLineTwo">Sign In</span>
+        </div>          
+      </a>
+      <a routerLink="/" class="header__link">
+        <div class="header__option">
+          <span class="header__optionLineOne">Returns</span>
+          <span class="header__optionLineTwo">& Orders</span>
+        </div>          
+      </a>
+      <a routerLink="/" class="header__link">
+        <div class="header__option">
+          <span class="header__optionLineOne">Your</span>
+          <span class="header__optionLineTwo">Prime</span>
+        </div>          
+      </a>
+   
+      <a routerLink="/checkout" class="header__link">
+        <div class="header__optionBasket">          
+          <fa-icon [icon]="shoppingBasket"></fa-icon>      
+          <span class="header__optionLineTwo header__basketCount">0</span>
+        </div>          
+      </a>
+    </div>
 </nav>
-
-<!-- search box -->
-<!-- 3 links -->
-<!-- Basket icon with the number -->
