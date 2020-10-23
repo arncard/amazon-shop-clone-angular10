@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-product',
+  selector: 'app_product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
@@ -19,7 +19,8 @@ export class ProductComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.starsList = Array.from(Array(this.rating).keys());
+    this.starsList = Array.from(Array(+this.rating).keys());
+    //this.starsList = Array(this.rating).fill().map((_) =>)
   }
 
 }
