@@ -13,6 +13,10 @@ import { ProductDetailsComponent } from './product-management/product-details/pr
 import { ProductComponent } from './product-management/product/product.component';
 import { ProductsListComponent } from './product-management/products-list/products-list.component';
  
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +29,9 @@ import { ProductsListComponent } from './product-management/products-list/produc
     ProductsListComponent
   ],
   imports: [
-    BrowserModule,    
+    BrowserModule,  
+    AngularFireModule.initializeApp(environment.firebaseConfig),  
+    AngularFireAuthModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
     AppRoutingModule
