@@ -16,6 +16,9 @@ import { ProductsListComponent } from './product-management/products-list/produc
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from './shared/material/material.module';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { environment } from '../environments/environment';
     AngularFireAuthModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
