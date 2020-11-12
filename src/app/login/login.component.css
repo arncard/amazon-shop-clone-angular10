@@ -24,6 +24,7 @@
 {
   margin-bottom: 5px;
   font-weight: bold;
+  font-size: 14px;
 }
 
 .login__container > form > div > input 
@@ -102,4 +103,12 @@
   border: 1px solid;
   margin-top: 20px;
   border-color: darkgray;
+}
+
+.error__label
+{
+  color: red;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
 }

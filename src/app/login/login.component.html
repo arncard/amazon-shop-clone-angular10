@@ -6,14 +6,14 @@
   <div class="login__container">
     <h1>Sign-In</h1>
     <div *ngIf="continuing">
-      {{ enteredEmail }} <span><a href="">Change</a></span>
+      {{ loginForm.get('email_phone').value }} <span><a (click)="change()">Change</a></span>
     </div>
     <form [formGroup]="loginForm">            
       <div *ngIf="!continuing">
         <h5>Email or mobile phone number</h5>
         <input type="text" formControlName="email_phone">
-        <div *ngIf="loginForm.get('email_phone').dirty && loginForm.get('email_phone').hasError('required')">
-          Please enter an email or phone number
+        <div *ngIf="loginForm.get('email_phone').dirty && loginForm.get('email_phone').hasError('required')" class="error__label">
+          Enter your email or phone number
         </div>
         <button class="login__signinButton" (click)="continue($event)">Continue</button>
         <p>

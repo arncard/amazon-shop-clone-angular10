@@ -37,7 +37,19 @@ export class LoginComponent implements OnInit {
     // preventDefault() stops the refresh when clicking the button. 
     // this happens because the button is inside a form tag.
     $event.preventDefault();
-    this.continuing = true;
+    if(!this.loginForm.get("email_phone").invalid)
+      this.continuing = true;
+    else
+    {
+      this.loginForm.get("email_phone").markAsDirty();
+    }
+  }
+
+  change()
+  {
+    this.loginForm.patchValue({email_phone: ''});
+    this.loginForm.get("email_phone").markAsPristine();
+    this.continuing = false;
   }
 
   signin($event)
