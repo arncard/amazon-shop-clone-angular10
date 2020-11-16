@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { FirebaseAuthenticationService } from '../shared/authentication/firebase-authentication.service';
-import { Authenticate } from '../shared/authentication/IAuthenticate';
+import { AuthenticateService } from '../shared/authentication/authenticate-service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   providers: [{
-    provide: Authenticate,
+    provide: AuthenticateService,
     useClass: FirebaseAuthenticationService
   }]
 })
@@ -16,14 +17,20 @@ export class LoginComponent implements OnInit {
   enteredEmail: string = "";
   continuing: boolean;
   loginForm: FormGroup;
+  returnUrl: string;
 
-  constructor(private authService: Authenticate, private readonly fb: FormBuilder) { }
+  constructor(private authService: AuthenticateService, 
+    private readonly fb: FormBuilder,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
       email_phone: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(5), this.validatorPassword]]
-    })
+    });
+
+    this.authService.SignOut();
+
   }
 
   validatorPassword(fc: FormControl) {
@@ -58,4 +65,10 @@ export class LoginComponent implements OnInit {
 
     this.authService.SignIn(this.loginForm.get("email_phone").value, this.loginForm.get("password").value);
   }
+
+  register()
+  {
+    
+  }
+  
 }
