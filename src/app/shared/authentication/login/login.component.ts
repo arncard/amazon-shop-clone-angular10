@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { FirebaseAuthenticationService } from '../shared/authentication/firebase-authentication.service';
-import { AuthenticateService } from '../shared/authentication/authenticate-service';
 import { ActivatedRoute } from '@angular/router';
+import { AuthenticateService } from '../authenticate-service';
+import { FirebaseAuthenticationService } from '../firebase-authentication.service';
 
 @Component({
   selector: 'app-login',

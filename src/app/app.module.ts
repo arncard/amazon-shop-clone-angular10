@@ -20,6 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './shared/material/material.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from './shared/helpers/error.interceptor';
+import { JwtInterceptor } from './shared/helpers/jwt.interceptor';
+import { CategoriesComponent } from './category-management/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { ErrorInterceptor } from './shared/helpers/error.interceptor';
     CheckoutComponent,
     ProductDetailsComponent,
     ProductComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,  
@@ -41,10 +44,13 @@ import { ErrorInterceptor } from './shared/helpers/error.interceptor';
     AppRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    //InMemoryWebApiModule.forRoot(AppData, { delay: 1000})
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

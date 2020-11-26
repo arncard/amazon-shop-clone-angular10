@@ -8,16 +8,11 @@ import { AuthenticateService } from './authenticate-service';
 @Injectable({
   providedIn: 'root'
 })
-export class FirebaseAuthenticationService extends AuthenticateService {
-  userSubject: BehaviorSubject<any>;
-  user: Observable<any>;
-
+export class FirebaseAuthenticationService extends AuthenticateService {  
   constructor(private angularFireAuth: AngularFireAuth,
     private router: Router) 
   {
-    super();
-    this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')));
-    this.user = this.userSubject.asObservable();
+    super();    
   }
 
   SignIn(email: string, password: string)
